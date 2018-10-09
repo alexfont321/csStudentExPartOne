@@ -8,10 +8,10 @@ namespace studentExercises
 
         public string SlackHandle { get; set; }
 
-        public int Cohort { get; set; }
+        public Cohort Cohort { get; set; }
 
         public void AssignStudentExercise(Exercise exercise, Student student) {
-            student.AddExercise(exercise);
+            student.StudentExercises.Add(exercise);
         }
 
 

@@ -12,13 +12,13 @@ namespace studentExercises
 
         public string SlackHandle { get; set; }
 
-        public int Cohort { get; set; }
+        public Cohort Cohort { get; set; }
 
-        List<Exercise> StudentExercises = new List<Exercise>();
+        public List<Exercise> StudentExercises = new List<Exercise>();
 
-        public void AddExercise(Exercise exercise) {
-            StudentExercises.Add(exercise);
-        }
+        // public void AddExercise(Exercise exercise) {
+        //     StudentExercises.Add(exercise);
+        // }
 
 
     }

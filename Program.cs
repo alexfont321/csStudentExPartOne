@@ -36,25 +36,25 @@ namespace studentExercises
             Student Alejandro = new Student() {
                 FirstName = "Alejandro",
                 LastName = "Font",
-                Cohort = 2
+                Cohort = CohortTwo
             };
 
             Student David = new Student() {
                 FirstName = "David",
                 LastName = "Taylor",
-                Cohort = 1
+                Cohort = CohortOne
             };
 
             Student Helen = new Student() {
                 FirstName = "Helen",
                 LastName = "Chalmers",
-                Cohort = 1
+                Cohort = CohortOne
             };
 
             Student Jonathan = new Student() {
                 FirstName = "Jonathan",
                 LastName = "Edwards",
-                Cohort = 3
+                Cohort = CohortThree
             };
 
             CohortOne.AddStudent(David);
@@ -65,17 +65,17 @@ namespace studentExercises
             Instructor Andy = new Instructor() {
                 FirstName = "Andy",
                 LastName = "Collins",
-                Cohort = 3
+                Cohort = CohortThree
             };
             Instructor Meg = new Instructor() {
                 FirstName = "Meg",
                 LastName = "Ducharme",
-                Cohort = 3
+                Cohort = CohortThree
             };
             Instructor Kimmy = new Instructor() {
                 FirstName = "Kimmy",
                 LastName = "Bird",
-                Cohort = 1
+                Cohort = CohortOne
             };
 
             CohortThree.AddInstructor(Andy);
@@ -84,12 +84,20 @@ namespace studentExercises
 
             Andy.AssignStudentExercise(ReactToState, Jonathan);
             Andy.AssignStudentExercise(MakeJavaScriptObjects, Jonathan);
+            Andy.AssignStudentExercise(StyleThePage, Alejandro);
+            Andy.AssignStudentExercise(GruntItUp, Alejandro);
 
             Meg.AssignStudentExercise(StyleThePage, Alejandro);
             Meg.AssignStudentExercise(ReactToState, Alejandro);
+            Meg.AssignStudentExercise(GruntItUp, David);
+            Meg.AssignStudentExercise(MakeJavaScriptObjects, David);
+
 
             Kimmy.AssignStudentExercise(GruntItUp, David);
             Kimmy.AssignStudentExercise(MakeJavaScriptObjects, David);
+            Kimmy.AssignStudentExercise(GruntItUp, Helen);
+            Kimmy.AssignStudentExercise(StyleThePage, Helen);
+
 
             List<Student> students = new List<Student>();
                 students.Add(Alejandro);
@@ -105,12 +113,17 @@ namespace studentExercises
                 exercises.Add(StyleThePage);
                 exercises.Add(GruntItUp);
 
-            // foreach (Student student in students) {
-            //     foreach (Exercise exercise in exercises){
-            //         if(student.StudentExercises == )
-            //     }
-            //     Console.WriteLine($"{student.StudentExercises}")
-            // }
+            foreach (Student student in students) {
+
+                // List<Exercise> InsideLoopEx = new List<Exercise>();
+
+                foreach (Exercise exercise in student.StudentExercises) {
+                    // InsideLoopEx.Add(exercise);
+                    Console.WriteLine($"{student.FirstName}: plus {exercise.Name}");
+                }
+
+
+            };
 
 
 
