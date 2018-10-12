@@ -9,3 +9,14 @@
 /Users/alejandro/Workspace/csharp/studentExercises/bin/Debug/netcoreapp2.1/studentExercises.pdb
 /Users/alejandro/Workspace/csharp/studentExercises/obj/Debug/netcoreapp2.1/studentExercises.dll
 /Users/alejandro/Workspace/csharp/studentExercises/obj/Debug/netcoreapp2.1/studentExercises.pdb
+/Users/alejandro/Workspace/csharp/studentExercises/studentExercises/bin/Debug/netcoreapp2.1/studentExercises.deps.json
+/Users/alejandro/Workspace/csharp/studentExercises/studentExercises/bin/Debug/netcoreapp2.1/studentExercises.runtimeconfig.json
+/Users/alejandro/Workspace/csharp/studentExercises/studentExercises/bin/Debug/netcoreapp2.1/studentExercises.runtimeconfig.dev.json
+/Users/alejandro/Workspace/csharp/studentExercises/studentExercises/bin/Debug/netcoreapp2.1/studentExercises.dll
+/Users/alejandro/Workspace/csharp/studentExercises/studentExercises/bin/Debug/netcoreapp2.1/studentExercises.pdb
+/Users/alejandro/Workspace/csharp/studentExercises/studentExercises/obj/Debug/netcoreapp2.1/studentExercises.csprojAssemblyReference.cache
+/Users/alejandro/Workspace/csharp/studentExercises/studentExercises/obj/Debug/netcoreapp2.1/studentExercises.csproj.CoreCompileInputs.cache
+/Users/alejandro/Workspace/csharp/studentExercises/studentExercises/obj/Debug/netcoreapp2.1/studentExercises.AssemblyInfoInputs.cache
+/Users/alejandro/Workspace/csharp/studentExercises/studentExercises/obj/Debug/netcoreapp2.1/studentExercises.AssemblyInfo.cs
+/Users/alejandro/Workspace/csharp/studentExercises/studentExercises/obj/Debug/netcoreapp2.1/studentExercises.dll
+/Users/alejandro/Workspace/csharp/studentExercises/studentExercises/obj/Debug/netcoreapp2.1/studentExercises.pdb

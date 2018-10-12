@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+
 
 namespace studentExercises
 {
@@ -11,18 +13,17 @@ namespace studentExercises
             Exercise MakeJavaScriptObjects = new Exercise();
                 MakeJavaScriptObjects.Name = "Make JavaScript Objects";
                 MakeJavaScriptObjects.ExerciseLanguage = "JavaScript";
-
             Exercise StyleThePage = new Exercise();
                 StyleThePage.Name = "Style the Page with CSS";
-                StyleThePage.ExerciseLanguage = "CSS";
+                StyleThePage.ExerciseLanguage = "JavaScript";
 
             Exercise ReactToState = new Exercise();
                 ReactToState.Name = "Learn React States";
-                StyleThePage.ExerciseLanguage = "React";
+                StyleThePage.ExerciseLanguage = "JavaScript";
 
             Exercise GruntItUp = new Exercise();
                 GruntItUp.Name = "Grunt It Up!";
-                GruntItUp.ExerciseLanguage = "Grunt/Git";
+                GruntItUp.ExerciseLanguage = "JavaScript";
 
             Cohort CohortOne = new Cohort();
                 CohortOne.Name = "Cohort One";
@@ -113,18 +114,39 @@ namespace studentExercises
                 exercises.Add(StyleThePage);
                 exercises.Add(GruntItUp);
 
-            foreach (Student student in students) {
+            // foreach (Student student in students) {
 
-                // List<Exercise> InsideLoopEx = new List<Exercise>();
+            //     // List<Exercise> InsideLoopEx = new List<Exercise>();
 
-                foreach (Exercise exercise in student.StudentExercises) {
-                    // InsideLoopEx.Add(exercise);
-                    Console.WriteLine($"{student.FirstName}: plus {exercise.Name}");
-                }
+            //     foreach (Exercise exercise in student.StudentExercises) {
+            //         // InsideLoopEx.Add(exercise);
+            //         Console.WriteLine($"{student.FirstName}: plus {exercise.Name}");
+            //     }
 
 
-            };
+            // };
 
+        List<Cohort> cohorts = new List<Cohort>() {
+            CohortOne,
+            CohortTwo,
+            CohortThree
+        };
+
+        List<Instructor> instructors = new List<Instructor>() {
+            Andy, 
+            Kimmy,
+            Meg
+        };
+
+
+    IEnumerable<Exercise> JavaScriptExercises = from ex in exercises
+        where ex.ExerciseLanguage == "JavaScript"
+        select ex
+        ;
+
+        foreach (Exercise ex in JavaScriptExercises) {
+            Console.WriteLine(ex.Name);
+        }
 
 
         }

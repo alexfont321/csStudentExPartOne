@@ -687,11 +687,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/alejandro/Workspace/csharp/studentExercises/studentExercises.csproj",
+      "projectUniqueName": "/Users/alejandro/Workspace/csharp/studentExercises/studentExercises/studentExercises.csproj",
       "projectName": "studentExercises",
-      "projectPath": "/Users/alejandro/Workspace/csharp/studentExercises/studentExercises.csproj",
+      "projectPath": "/Users/alejandro/Workspace/csharp/studentExercises/studentExercises/studentExercises.csproj",
       "packagesPath": "/Users/alejandro/.nuget/packages/",
-      "outputPath": "/Users/alejandro/Workspace/csharp/studentExercises/obj/",
+      "outputPath": "/Users/alejandro/Workspace/csharp/studentExercises/studentExercises/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
