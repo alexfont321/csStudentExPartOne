@@ -10,6 +10,12 @@ namespace studentExercises {
         public int StudentExercises { get; set; }
 
     }
+
+    public class NewCohort {
+        public string Name { get; set; }
+        public int Students { get; set; }
+
+    }
     class Program {
         static void Main (string[] args) {
 
@@ -200,6 +206,17 @@ namespace studentExercises {
             // foreach (NewStudentEntry stu in studentWithMostEx) {
             //     Console.WriteLine(stu.FirstName);
             // }
+
+
+            List<NewCohort> newCohortList = cohorts.Select(c => 
+                new NewCohort {
+                    Name = c.Name,
+                    Students = c.Students.Count
+                }).ToList();
+
+                foreach (NewCohort nc in newCohortList) {
+                    Console.WriteLine($"{nc.Name}: {nc.Students}");
+                }
 
 
 
