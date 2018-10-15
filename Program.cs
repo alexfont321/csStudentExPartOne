@@ -15,11 +15,11 @@ namespace studentExercises
                 MakeJavaScriptObjects.ExerciseLanguage = "JavaScript";
             Exercise StyleThePage = new Exercise();
                 StyleThePage.Name = "Style the Page with CSS";
-                StyleThePage.ExerciseLanguage = "JavaScript";
+                StyleThePage.ExerciseLanguage = "CSS";
 
             Exercise ReactToState = new Exercise();
                 ReactToState.Name = "Learn React States";
-                StyleThePage.ExerciseLanguage = "JavaScript";
+                ReactToState.ExerciseLanguage = "JavaScript";
 
             Exercise GruntItUp = new Exercise();
                 GruntItUp.Name = "Grunt It Up!";
@@ -110,8 +110,8 @@ namespace studentExercises
 
             List<Exercise> exercises = new List<Exercise>();
                 exercises.Add(MakeJavaScriptObjects);
-                exercises.Add(ReactToState);
                 exercises.Add(StyleThePage);
+                exercises.Add(ReactToState);
                 exercises.Add(GruntItUp);
 
             // foreach (Student student in students) {
@@ -144,10 +144,28 @@ namespace studentExercises
         select ex
         ;
 
-        foreach (Exercise ex in JavaScriptExercises) {
-            Console.WriteLine(ex.Name);
+        // foreach (Exercise ex in JavaScriptExercises) {
+        //     Console.WriteLine(ex.Name);
+        //     Console.WriteLine(ex.ExerciseLanguage);
+        // }
+
+    IEnumerable<Student> studentsByCohort = from stu in students 
+        where stu.Cohort == CohortOne
+        select stu 
+        ;
+
+        foreach (Student stu in studentsByCohort) {
+            Console.WriteLine(stu.FirstName);
         }
 
+    IEnumerable<Instructor> instructorsByCohort = from inst in instructors
+        where inst.Cohort == CohortThree
+        select inst
+        ;
+
+    foreach (Instructor inst in instructorsByCohort) {
+        Console.WriteLine(inst.FirstName);
+    }
 
         }
     }
