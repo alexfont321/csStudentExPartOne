@@ -2,117 +2,116 @@
 using System.Collections.Generic;
 using System.Linq;
 
+namespace studentExercises {
 
-namespace studentExercises
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
+    public class NewStudentEntry {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public int StudentExercises { get; set; }
 
-            Exercise MakeJavaScriptObjects = new Exercise();
-                MakeJavaScriptObjects.Name = "Make JavaScript Objects";
-                MakeJavaScriptObjects.ExerciseLanguage = "JavaScript";
-            Exercise StyleThePage = new Exercise();
-                StyleThePage.Name = "Style the Page with CSS";
-                StyleThePage.ExerciseLanguage = "CSS";
+    }
+    class Program {
+        static void Main (string[] args) {
 
-            Exercise ReactToState = new Exercise();
-                ReactToState.Name = "Learn React States";
-                ReactToState.ExerciseLanguage = "JavaScript";
+            Exercise MakeJavaScriptObjects = new Exercise ();
+            MakeJavaScriptObjects.Name = "Make JavaScript Objects";
+            MakeJavaScriptObjects.ExerciseLanguage = "JavaScript";
+            Exercise StyleThePage = new Exercise ();
+            StyleThePage.Name = "Style the Page with CSS";
+            StyleThePage.ExerciseLanguage = "CSS";
 
-            Exercise GruntItUp = new Exercise();
-                GruntItUp.Name = "Grunt It Up!";
-                GruntItUp.ExerciseLanguage = "JavaScript";
+            Exercise ReactToState = new Exercise ();
+            ReactToState.Name = "Learn React States";
+            ReactToState.ExerciseLanguage = "JavaScript";
 
-            Cohort CohortOne = new Cohort();
-                CohortOne.Name = "Cohort One";
+            Exercise GruntItUp = new Exercise ();
+            GruntItUp.Name = "Grunt It Up!";
+            GruntItUp.ExerciseLanguage = "JavaScript";
 
-            Cohort CohortTwo = new Cohort();
-                CohortTwo.Name = "Cohort Two";
+            Cohort CohortOne = new Cohort ();
+            CohortOne.Name = "Cohort One";
 
-            Cohort CohortThree = new Cohort();
-                CohortThree.Name = "Cohort Three";
+            Cohort CohortTwo = new Cohort ();
+            CohortTwo.Name = "Cohort Two";
 
-            Student Alejandro = new Student() {
+            Cohort CohortThree = new Cohort ();
+            CohortThree.Name = "Cohort Three";
+
+            Student Alejandro = new Student () {
                 FirstName = "Alejandro",
                 LastName = "Font",
                 Cohort = CohortTwo
             };
 
-            Student David = new Student() {
+            Student David = new Student () {
                 FirstName = "David",
                 LastName = "Taylor",
                 Cohort = CohortOne
             };
 
-            Student Helen = new Student() {
+            Student Helen = new Student () {
                 FirstName = "Helen",
                 LastName = "Chalmers",
                 Cohort = CohortOne
             };
 
-            Student Jonathan = new Student() {
+            Student Jonathan = new Student () {
                 FirstName = "Jonathan",
                 LastName = "Edwards",
                 Cohort = CohortThree
             };
 
-            CohortOne.AddStudent(David);
-            CohortOne.AddStudent(Helen);
-            CohortTwo.AddStudent(Alejandro);
-            CohortThree.AddStudent(Jonathan);
+            CohortOne.AddStudent (David);
+            CohortOne.AddStudent (Helen);
+            CohortTwo.AddStudent (Alejandro);
+            CohortThree.AddStudent (Jonathan);
 
-            Instructor Andy = new Instructor() {
+            Instructor Andy = new Instructor () {
                 FirstName = "Andy",
                 LastName = "Collins",
                 Cohort = CohortThree
             };
-            Instructor Meg = new Instructor() {
+            Instructor Meg = new Instructor () {
                 FirstName = "Meg",
                 LastName = "Ducharme",
                 Cohort = CohortThree
             };
-            Instructor Kimmy = new Instructor() {
+            Instructor Kimmy = new Instructor () {
                 FirstName = "Kimmy",
                 LastName = "Bird",
                 Cohort = CohortOne
             };
 
-            CohortThree.AddInstructor(Andy);
-            CohortThree.AddInstructor(Meg);
-            CohortOne.AddInstructor(Kimmy);
+            CohortThree.AddInstructor (Andy);
+            CohortThree.AddInstructor (Meg);
+            CohortOne.AddInstructor (Kimmy);
 
-            Andy.AssignStudentExercise(ReactToState, Jonathan);
-            Andy.AssignStudentExercise(MakeJavaScriptObjects, Jonathan);
-            Andy.AssignStudentExercise(StyleThePage, Alejandro);
-            Andy.AssignStudentExercise(GruntItUp, Alejandro);
+            // Andy.AssignStudentExercise (ReactToState, Jonathan);
+            // Andy.AssignStudentExercise (MakeJavaScriptObjects, Jonathan);
+            Andy.AssignStudentExercise (StyleThePage, Alejandro);
+            Andy.AssignStudentExercise (GruntItUp, Alejandro);
 
-            Meg.AssignStudentExercise(StyleThePage, Alejandro);
-            Meg.AssignStudentExercise(ReactToState, Alejandro);
-            Meg.AssignStudentExercise(GruntItUp, David);
-            Meg.AssignStudentExercise(MakeJavaScriptObjects, David);
+            Meg.AssignStudentExercise (StyleThePage, Alejandro);
+            Meg.AssignStudentExercise (ReactToState, Alejandro);
+            Meg.AssignStudentExercise (GruntItUp, David);
+            Meg.AssignStudentExercise (MakeJavaScriptObjects, David);
 
+            Kimmy.AssignStudentExercise (GruntItUp, David);
+            Kimmy.AssignStudentExercise (MakeJavaScriptObjects, David);
+            // Kimmy.AssignStudentExercise(GruntItUp, Helen);
+            // Kimmy.AssignStudentExercise(StyleThePage, Helen);
 
-            Kimmy.AssignStudentExercise(GruntItUp, David);
-            Kimmy.AssignStudentExercise(MakeJavaScriptObjects, David);
-            Kimmy.AssignStudentExercise(GruntItUp, Helen);
-            Kimmy.AssignStudentExercise(StyleThePage, Helen);
+            List<Student> students = new List<Student> ();
+            students.Add (Alejandro);
+            students.Add (David);
+            students.Add (Helen);
+            students.Add (Jonathan);
 
-
-            List<Student> students = new List<Student>();
-                students.Add(Alejandro);
-                students.Add(David);
-                students.Add(Helen);
-                students.Add(Jonathan);
-
-
-
-            List<Exercise> exercises = new List<Exercise>();
-                exercises.Add(MakeJavaScriptObjects);
-                exercises.Add(StyleThePage);
-                exercises.Add(ReactToState);
-                exercises.Add(GruntItUp);
+            List<Exercise> exercises = new List<Exercise> ();
+            exercises.Add (MakeJavaScriptObjects);
+            exercises.Add (StyleThePage);
+            exercises.Add (ReactToState);
+            exercises.Add (GruntItUp);
 
             // foreach (Student student in students) {
 
@@ -123,49 +122,89 @@ namespace studentExercises
             //         Console.WriteLine($"{student.FirstName}: plus {exercise.Name}");
             //     }
 
-
             // };
 
-        List<Cohort> cohorts = new List<Cohort>() {
-            CohortOne,
-            CohortTwo,
-            CohortThree
-        };
+            List<Cohort> cohorts = new List<Cohort> () {
+                CohortOne,
+                CohortTwo,
+                CohortThree
+            };
 
-        List<Instructor> instructors = new List<Instructor>() {
-            Andy, 
-            Kimmy,
-            Meg
-        };
+            List<Instructor> instructors = new List<Instructor> () {
+                Andy,
+                Kimmy,
+                Meg
+            };
+
+            IEnumerable<Exercise> JavaScriptExercises = from ex in exercises
+            where ex.ExerciseLanguage == "JavaScript"
+            select ex
+            ;
+
+            // foreach (Exercise ex in JavaScriptExercises) {
+            //     Console.WriteLine(ex.Name);
+            //     Console.WriteLine(ex.ExerciseLanguage);
+            // }
+
+            IEnumerable<Student> studentsByCohort = from stu in students
+            where stu.Cohort == CohortOne
+            select stu
+            ;
+
+            // foreach (Student stu in studentsByCohort) {
+            //     Console.WriteLine(stu.FirstName);
+            // }
+
+            IEnumerable<Instructor> instructorsByCohort = from inst in instructors
+            where inst.Cohort == CohortThree
+            select inst
+            ;
+
+            // foreach (Instructor inst in instructorsByCohort) {
+            //     Console.WriteLine(inst.FirstName);
+            // }
+
+            IEnumerable<Student> studentsByLastName = from s in students
+            orderby s.LastName descending
+            select s
+            ;
+
+            // foreach (Student stu in studentsByLastName) {
+            //     Console.WriteLine (stu.LastName);
+            // }
+
+            List<NewStudentEntry> studentsWithNoEx = students.Select (s =>
+                new NewStudentEntry {
+                    FirstName = s.FirstName,
+                    LastName = s.LastName,
+                    StudentExercises = s.StudentExercises.Count
+                }
+            ).Where(s => s.StudentExercises == 0).ToList ();
+
+            // foreach (NewStudentEntry stu in studentsWithNoEx) {
+            //     Console.WriteLine(stu.FirstName);
+            // }
+
+            List<NewStudentEntry> studentWithMostEx = students.Select(s => 
+                new NewStudentEntry {
+                    FirstName = s.FirstName,
+                    LastName = s.LastName,
+                    StudentExercises = s.StudentExercises.Count
+                }).OrderByDescending(s => s.StudentExercises).ToList();
+
+                // IEnumerable<NewStudentEntry> newListOfStudent = (from s in studentWithMostEx
+                //     select s).First();
+
+                Console.WriteLine($"{studentWithMostEx.First().FirstName}");
+            
+            // foreach (NewStudentEntry stu in studentWithMostEx) {
+            //     Console.WriteLine(stu.FirstName);
+            // }
 
 
-    IEnumerable<Exercise> JavaScriptExercises = from ex in exercises
-        where ex.ExerciseLanguage == "JavaScript"
-        select ex
-        ;
 
-        // foreach (Exercise ex in JavaScriptExercises) {
-        //     Console.WriteLine(ex.Name);
-        //     Console.WriteLine(ex.ExerciseLanguage);
-        // }
 
-    IEnumerable<Student> studentsByCohort = from stu in students 
-        where stu.Cohort == CohortOne
-        select stu 
-        ;
 
-        foreach (Student stu in studentsByCohort) {
-            Console.WriteLine(stu.FirstName);
-        }
-
-    IEnumerable<Instructor> instructorsByCohort = from inst in instructors
-        where inst.Cohort == CohortThree
-        select inst
-        ;
-
-    foreach (Instructor inst in instructorsByCohort) {
-        Console.WriteLine(inst.FirstName);
-    }
 
         }
     }
