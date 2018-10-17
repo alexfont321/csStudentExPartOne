@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Data.Sqlite;
+using System.Text;
+using Dapper;
 
 namespace studentExercises {
 
@@ -20,18 +23,18 @@ namespace studentExercises {
         static void Main (string[] args) {
 
             Exercise MakeJavaScriptObjects = new Exercise ();
-            MakeJavaScriptObjects.Name = "Make JavaScript Objects";
+            MakeJavaScriptObjects.ExerciseName = "Make JavaScript Objects";
             MakeJavaScriptObjects.ExerciseLanguage = "JavaScript";
             Exercise StyleThePage = new Exercise ();
-            StyleThePage.Name = "Style the Page with CSS";
+            StyleThePage.ExerciseName = "Style the Page with CSS";
             StyleThePage.ExerciseLanguage = "CSS";
 
             Exercise ReactToState = new Exercise ();
-            ReactToState.Name = "Learn React States";
+            ReactToState.ExerciseName = "Learn React States";
             ReactToState.ExerciseLanguage = "JavaScript";
 
             Exercise GruntItUp = new Exercise ();
-            GruntItUp.Name = "Grunt It Up!";
+            GruntItUp.ExerciseName = "Grunt It Up!";
             GruntItUp.ExerciseLanguage = "JavaScript";
 
             Cohort CohortOne = new Cohort ();
@@ -214,13 +217,34 @@ namespace studentExercises {
                     Students = c.Students.Count
                 }).ToList();
 
-                foreach (NewCohort nc in newCohortList) {
-                    Console.WriteLine($"{nc.Name}: {nc.Students}");
+                // foreach (NewCohort nc in newCohortList) {
+                //     Console.WriteLine($"{nc.Name}: {nc.Students}");
+                // }
+
+//////////////////////////////////////////////////////
+////////Student Exercise Part 4
+
+
+            SqliteConnection db = DatabaseInterface.Connection;
+
+
+            List<Exercise> exercisesFromDap = db.Query<Exercise>(@"SELECT * FROM Exercise").ToList();
+            
+        //////PART 3
+
+            foreach (Exercise ex in exercisesFromDap) {
+                Console.WriteLine($"{ex.ExerciseName}");
+            }
+        //////PART 4
+
+
+            foreach (Exercise ex in exercisesFromDap) {
+                if (ex.ExerciseLanguage == "JavaScript") {
+                    Console.WriteLine(ex.ExerciseName);
                 }
+            }
 
-
-
-
+        DatabaseInterface.AddExercise("Hanging with the Coders", "HTML");
 
 
         }
