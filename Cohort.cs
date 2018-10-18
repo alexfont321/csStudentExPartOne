@@ -6,7 +6,7 @@ namespace studentExercises
     public class Cohort 
     {
 
-        public string Name { get; set; }
+        public string CohortName { get; set; }
 
         public List<Student> Students = new List<Student>();
 

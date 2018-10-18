@@ -38,13 +38,13 @@ namespace studentExercises {
             GruntItUp.ExerciseLanguage = "JavaScript";
 
             Cohort CohortOne = new Cohort ();
-            CohortOne.Name = "Cohort One";
+            CohortOne.CohortName = "Cohort One";
 
             Cohort CohortTwo = new Cohort ();
-            CohortTwo.Name = "Cohort Two";
+            CohortTwo.CohortName = "Cohort Two";
 
             Cohort CohortThree = new Cohort ();
-            CohortThree.Name = "Cohort Three";
+            CohortThree.CohortName = "Cohort Three";
 
             Student Alejandro = new Student () {
                 FirstName = "Alejandro",
@@ -213,7 +213,7 @@ namespace studentExercises {
 
             List<NewCohort> newCohortList = cohorts.Select(c => 
                 new NewCohort {
-                    Name = c.Name,
+                    Name = c.CohortName,
                     Students = c.Students.Count
                 }).ToList();
 
@@ -232,19 +232,49 @@ namespace studentExercises {
             
         //////PART 3
 
-            foreach (Exercise ex in exercisesFromDap) {
-                Console.WriteLine($"{ex.ExerciseName}");
-            }
+            // foreach (Exercise ex in exercisesFromDap) {
+            //     Console.WriteLine($"{ex.ExerciseName}");
+            // }
+
         //////PART 4
 
 
-            foreach (Exercise ex in exercisesFromDap) {
-                if (ex.ExerciseLanguage == "JavaScript") {
-                    Console.WriteLine(ex.ExerciseName);
-                }
+            // foreach (Exercise ex in exercisesFromDap) {
+            //     if (ex.ExerciseLanguage == "JavaScript") {
+            //         Console.WriteLine(ex.ExerciseName);
+            //     }
+            // }
+
+        // DatabaseInterface.AddExercise("Hanging with the Coders", "HTML");
+
+
+        ////Part 5
+
+
+        // db.Execute($@"insert into Exercise 
+        //             (ExerciseName, ExerciseLanguage) 
+        //             values
+        //             ('Hanging with Coders', 'HTML')");
+
+        /////Part 6
+
+            List<Instructor> InstructorsFromDap = db.Query<Instructor>(@"SELECT * FROM Instructor").ToList();
+
+            foreach (Instructor i in InstructorsFromDap) {
+                Console.WriteLine($"{i.FirstName} {i.LastName}: Cohort {i.CohortId}");
             }
 
-        DatabaseInterface.AddExercise("Hanging with the Coders", "HTML");
+        /////Part 7
+
+        // db.Execute($@" insert into Instructor
+        //                 (FirstName, LastName, CohortId)
+        //                 values
+        //                 ('Steve', 'Brownlee', 2)");
+
+
+
+
+
 
 
         }

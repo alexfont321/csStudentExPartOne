@@ -21,12 +21,12 @@ namespace studentExercises
             }
         }
 
-        public static void AddExercise(string name, string lang)
-        {
-            SqliteConnection db = DatabaseInterface.Connection;
+        // public static void AddExercise(string name, string lang)
+        // {
+        //     SqliteConnection db = DatabaseInterface.Connection;
 
-            db.Execute($"insert into Exercise (ExerciseName, ExerciseLanguage) values ({name}, {lang})");
-        }
+        //     db.Execute($"insert into Exercise (ExerciseName, ExerciseLanguage) values ({name}, {lang})");
+        // }
 
         // public static void checkExerciseTable() 
         // {

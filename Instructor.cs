@@ -8,6 +8,8 @@ namespace studentExercises
 
         public string SlackHandle { get; set; }
 
+        public int CohortId {get; set; }
+
         public Cohort Cohort { get; set; }
 
         public void AssignStudentExercise(Exercise exercise, Student student) {
