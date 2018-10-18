@@ -259,9 +259,10 @@ namespace studentExercises {
         /////Part 6
 
             List<Instructor> InstructorsFromDap = db.Query<Instructor>(@"SELECT * FROM Instructor").ToList();
+            List<Cohort> CohortFromDap = db.Query<Cohort>(@"SELECT * FROM Cohort").ToList();
 
             foreach (Instructor i in InstructorsFromDap) {
-                Console.WriteLine($"{i.FirstName} {i.LastName}: Cohort {i.CohortId}");
+                Console.WriteLine($"{i.FirstName} {i.LastName}: {CohortFromDap.Find(c => c.Id == i.CohortId).CohortName}");
             }
 
         /////Part 7
@@ -273,7 +274,12 @@ namespace studentExercises {
 
 
 
+        /////Part 8 
 
+        // db.Execute($@" insert into StudentExercises
+        //             (ExerciseId, StudentId)
+        //             values
+        //             (1, 4)");
 
 
 
